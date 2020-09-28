@@ -1,23 +1,23 @@
 package com.example.models;
 
+import java.util.UUID;
+
 public class AnimalLife {
-    private Long id;
+    private UUID id;
     private Fox fox;
     private Crow crow;
     private Terrain terrain;
     private Status status;
 
-    private static long nextId = 1L;
-
     public AnimalLife(Fox fox, Crow crow, Terrain terrain) {
-        this.id = nextId++;
+        this.id = UUID.randomUUID();
         this.fox = fox;
         this.crow = crow;
         this.terrain = terrain;
         this.status = Status.noEating;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 

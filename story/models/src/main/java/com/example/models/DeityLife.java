@@ -1,10 +1,11 @@
 package com.example.models;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class DeityLife {
-    private final HashMap<Long, AnimalLife> animalsLife = new HashMap<>();
-    private final HashMap<Long, Food> foods = new HashMap<>();
+    private final HashMap<UUID, AnimalLife> animalsLife = new HashMap<>();
+    private final HashMap<UUID, Food> foods = new HashMap<>();
     private final Deity deity;
 
     public DeityLife(Deity deity) {
@@ -19,22 +20,22 @@ public class DeityLife {
         foods.put(food.getId(), food);
     }
 
-    public void deletFood(Long id) {
+    public void deletFood(UUID id) {
         if (getFoodById(id) != null) {
             foods.remove(id);
         }
     }
 
-    public AnimalLife getAnimalLifeById(Long animalLifeId) {
+    public AnimalLife getAnimalLifeById(UUID animalLifeId) {
         return animalsLife.getOrDefault(animalLifeId, null);
     }
 
-    public Food getFoodById(Long foodId) {
+    public Food getFoodById(UUID foodId) {
         return foods.getOrDefault(foodId, null);
     }
 
     public void startStory(int choose1, int choose2) {
-        Long testFoodId = null;
+        UUID testFoodId = null;
 
         int iter1 = 1;
         for (AnimalLife valueAnimal : animalsLife.values()) {
@@ -87,7 +88,7 @@ public class DeityLife {
         }
     }
 
-    public void loseFood(Long idAnimal, Long idFood) {
+    public void loseFood(UUID idAnimal, UUID idFood) {
         AnimalLife animals = getAnimalLifeById(idAnimal);
         Food food = getFoodById(idFood);
 

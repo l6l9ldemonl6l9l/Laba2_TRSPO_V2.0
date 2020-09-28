@@ -1,17 +1,17 @@
 package com.example.models;
 
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
+import java.util.UUID;
 
 @MappedSuperclass
 public class FairyAnimal {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    private UUID id;
 
     private String name;
     private Date lastLunchTime;
@@ -47,11 +47,11 @@ public class FairyAnimal {
         System.out.print(name + ". Животное ело последний раз: " + lastLunchTime + ". Текущая енергия: " + energy + ".");
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
