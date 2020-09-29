@@ -1,6 +1,10 @@
-com/example/myserver/repository/FoodRepository.class
-com/example/myserver/repository/FoxRepository.class
+com/example/myserver/rest/FoxRest.class
 com/example/myserver/repository/DeityRepository.class
-com/example/myserver/MyServerApplication.class
+com/example/myserver/rest/TerrainRest.class
 com/example/myserver/repository/CrowRepository.class
 com/example/myserver/repository/TerrainRepository.class
+com/example/myserver/repository/FoodRepository.class
+com/example/myserver/rest/FoodRest.class
+com/example/myserver/repository/FoxRepository.class
+com/example/myserver/rest/DeityRest.class
+com/example/myserver/MyServerApplication.class

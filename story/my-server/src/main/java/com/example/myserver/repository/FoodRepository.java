@@ -3,7 +3,11 @@ package com.example.myserver.repository;
 import com.example.models.Food;
 import org.springframework.data.repository.CrudRepository;
 
-public interface FoodRepository extends CrudRepository<Food, Long> {
+import java.util.List;
+import java.util.UUID;
 
-    Food findByKindFood(String kind);
+public interface FoodRepository extends CrudRepository <Food, Long > {
+    List<Food> findByKindFood(String kindFood);
+    boolean existsById(UUID id);
+    boolean existsByKindFood(String kindFood);
 }
