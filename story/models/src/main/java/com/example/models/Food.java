@@ -20,10 +20,10 @@ public class Food {
     public Food() {
     }
 
-    public Food(int taste, String kindFood, Date birthday) {
+    public Food(int taste, String kindFood) {
         this.taste = taste;
         this.kindFood = kindFood;
-        this.birthday = birthday;
+        this.birthday = new Date();
     }
 
     public void showInformationAboutFood() {

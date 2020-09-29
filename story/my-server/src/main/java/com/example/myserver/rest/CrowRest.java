@@ -7,9 +7,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 
 @RestController
+@RequestMapping("/crow")
 public class CrowRest{
     private final CrowController crowController;
 
@@ -17,7 +17,7 @@ public class CrowRest{
         this.crowController = crowController;
     }
 
-    @PostMapping("/crowsPost")
+    @PostMapping("/crowPost")
     public ResponseEntity<String> newCrow(@RequestParam String name, @RequestParam int energy, @RequestParam int sizeMind) {
         try{
             crowController.createCrow(name,energy,sizeMind);
@@ -31,7 +31,7 @@ public class CrowRest{
         return new ResponseEntity<>("Created1", HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/crowsGet",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/crowGet",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getCrow(@RequestParam String name) {
         Crow foundCrow;
         try {
